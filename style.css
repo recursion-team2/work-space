@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  background-color: seashell;
+}
+
+#fortune {
+  border: 1px, solid, pink;
+}
+
+.hide {
+  display: none;
+}
