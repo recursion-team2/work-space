@@ -3,22 +3,177 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="main.js"></script>
-    <title>おみくじ</title>
+    <title>夜ごはん提案アプリ（仮）</title>
   </head>
   <body>
-    <h1>おみくじ</h1>
-    <div id="main">
-      <button type="button" id="draw">おみくじを引く</button>
-    </div>
-    <div id="fortune" class="hide">
-      <div id="fortune-title">運勢</div>
-      <div id="lucky-color">ラッキーカラー</div>
-      <div id="lucky-food">おすすめの食べ物</div>
-      <div id="lucky-place">おすすめの場所</div>
+    <div id="container" class="container min-vh-100 d-flex align-items-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-8 col-10 my-4 text-center">
+          <div
+            id="main"
+            class="row justify-content-center align-items-center p-3"
+          >
+            <h1 class="text-danger">夜ごはん提案アプリ（仮）</h1>
+            <div id="draw">
+              <p>
+                <img
+                  class="light mx-auto col-8"
+                  src="images/cooking_cloche_domecover_close.png"
+                />
+              </p>
+              <div class="mx-auto">
+                <button type="button" class="btn btn-danger btn-lg">
+                  夜ごはん提案する
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="fortune" class="hide bg-white text-center text-danger p-3">
+            <h2>今日の夜ごはん</h2>
+            <hr />
+            <div id="first-suggestion">
+              <div>
+                <h3 id="first-menu" class="main-dish">ペペロンチーノ</h3>
+                <p>
+                  <img
+                    id="first-maindish-picture"
+                    class="col-md-8 col-10"
+                    src="images\food_curryruce.png"
+                  />
+                </p>
+              </div>
+              <p id="first-description">
+                材料は至ってシンプル。完成されたレシピに余計なものはいらない。そんな今夜はペペロンチーノ。
+              </p>
+              <div>
+                <h3 id="first-side-menu" class="side-dish">ポテトサラダ</h3>
+                <p>
+                  <img
+                    id="first-sidemenue-picture"
+                    class="col-md-8 col-10"
+                    src="images\food_potato_sald.png"
+                  />
+                </p>
+                <ul class="link-danger">
+                  <li id="first-recipe">
+                    <a
+                      href="https://cookpad.com/jp/search/%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E"
+                      target="_blank"
+                      class="link-danger"
+                      >レシピを調べる</a
+                    >
+                  </li>
+                  <li id="first-menu-map">
+                    <a
+                      href="https://maps.google.co.jp/maps?q=%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E"
+                      target="_blank"
+                      class="link-danger"
+                      >近くで食べられるところ</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <hr />
 
-      <button type="button" id="retry">もう一度やる</button>
+            <div id="second-suggestion">
+              <h3 id="second-menu" class="main-dish">２番目のメニュー</h3>
+              <p id="second-description">ひとこと</p>
+              <h3 id="second-side-menu" class="side-dish">２番目の副菜</h3>
+
+              <ul>
+                <li id="second-recipe">
+                  <a href="#" target="_blank" class="link-danger"
+                    >作り方を調べる</a
+                  >
+                </li>
+                <li id="second-find">
+                  <a href="#" target="_blank" class="link-danger"
+                    >食べられるところを探す</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <hr />
+
+            <div id="third-suggestion">
+              <h3 id="third-menu" class="main-dish">３番目のメニュー</h3>
+
+              <p id="third-description">ひとこと</p>
+              <h3 id="third-side-menu" class="side-dish">３番目の副菜</h3>
+
+              <ul>
+                <li id="third-recipe">
+                  <a href="#" target="_blank" class="link-danger"
+                    >作り方を調べる</a
+                  >
+                </li>
+                <li id="third-find">
+                  <a href="#" target="_blank" class="link-danger"
+                    >食べられるところを探す</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div id="fortune-title">運勢</div>
+            <div id="lucky-color">ラッキーカラー</div>
+            <div id="lucky-food">おすすめの食べ物</div>
+            <div id="lucky-place">おすすめの場所</div>
+
+            <button type="button" id="retry" class="btn btn-danger mt-3">
+              もう一度、やってみる
+            </button>
+          </div>
+        </div>
+        <div id="about" class="hide col-lg-5 col-md-8 col-10 my-4">
+          <h2>このおみくじについて</h2>
+          <p>
+            このおみくじは、コンピュータ・サイエンスの学習プラットフォーム
+            Recursion
+            で開催されているイベント「チーム開発体験会」の課題として制作されたものです。
+          </p>
+          <p>あなたのソフトウェア開発の行方を占います。</p>
+          <p>
+            「チーム開発体験会」が催される度におみくじの種類が増えてゆきますので、納得しかねるおみくじを引いてしまっても懲りずにまた引きに来るのが吉です。
+          </p>
+        </div>
+        <div id="developers" class="hide col-lg-5 col-md-8 col-10 my-4">
+          <h2>開発者一覧</h2>
+          <ul>
+            <li>akemashita</li>
+            <li>chia3</li>
+            <li>tyz8250</li>
+          </ul>
+        </div>
+        <footer id="footer" class="">
+          <div class="d-flex flex-column">
+            <div class="d-flex justify-content-center">
+              <a href="#" id="show-about" class="link-danger"
+                >このアプリについて</a
+              >｜
+              <a href="#" id="show-developers" class="link-danger">
+                開発者一覧
+              </a>
+            </div>
+          </div>
+        </footer>
+      </div>
     </div>
+    <div id="mask" class="hide"></div>
   </body>
 </html>

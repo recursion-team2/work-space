@@ -1,16 +1,119 @@
-body {
-  margin: 0;
-  padding: 0;
+@charset "utf-8";
+
+html {
+  touch-action: manipulation;
 }
 
-#main {
-  background-color: seashell;
+body {
+  background-image: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
 }
+
+ul {
+  list-style-type: square;
+}
+
+.light {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+}
+
+
+/* Effect */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+/* #main {
+
+} */
+/* main 領域に関するもの */
+
+#main.hide,
+#fortune.hide {
+  display: none;
+}
+
+
+/* fortune 領域に関するもの */
 
 #fortune {
-  border: 1px, solid, pink;
+  border: thick double red;
+  outline: 0.2rem solid red;
+  overflow-x: hidden;
 }
 
-.hide {
+#fortune hr {
+  border-top: 2px solid red;
+}
+
+#fortune ul {
+  list-style: none;
+  display: inline;
+}
+
+.main-dish::before {
+  content: "✿メイン：";
+}
+
+.main-dish::after {
+  content: "✿";
+}
+
+.side-dish::before {
+  content: "✿副菜：";
+}
+
+.side-dish::after {
+  content: "✿";
+}
+
+
+/* footer に関するレイアウト */
+footer {
+  margin: 2rem auto;
+}
+
+footer.hide {
   display: none;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#mask.hide {
+  display: none;
+}
+
+#about,
+#developers {
+  background: #fff;
+  /* width: 90vmin; */
+  padding: 2.5vmin;
+  border-radius: 8px;
+  position: absolute;
+  top: 20vmax;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: transform 0.4s;
+  z-index: 2;
+}
+
+#about.hide,
+#developers.hide {
+  transform: translate(0, -110vmax);
 }
