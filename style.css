@@ -5,9 +5,6 @@ html {
 }
 
 body {
-  padding: 5vh 5vw;
-  height: 100vh;
-  width: 100vw;
   background-image: linear-gradient(to bottom, #ffecd2 0%, #fcb69f 100%);
 }
 
@@ -20,25 +17,70 @@ ul {
 }
 
 .img-domecover {
-  height: 15rem;
+  height: 240px;
+}
+
+/* Effect */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
 }
 
 /* #main {
 
 } */
-
-footer {
-  margin: 2rem auto;
-}
-
-#fortune {
-  border: 1px, solid, pink;
-}
+/* main 領域に関するもの */
 
 #main.hide,
 #fortune.hide {
   display: none;
 }
+
+
+/* fortune 領域に関するもの */
+
+#fortune {
+  border: thick double red;
+  outline: 0.2rem solid red;
+  overflow-x: hidden;
+}
+
+#fortune hr {
+  border-top: 2px solid red;
+}
+
+#fortune ul {
+  list-style: none;
+}
+
+.main-dish::before {
+  content: "メイン：";
+}
+
+.side-dish::before {
+  content: "副菜：";
+}
+
+
+/* footer に関するレイアウト */
+footer {
+  margin: 2rem auto;
+  color: red;
+}
+
+footer a {
+  color: red;
+  text-decoration: none;
+}
+
+
 
 #mask {
   background: rgba(0, 0, 0, 0.4);
@@ -57,7 +99,7 @@ footer {
 #about,
 #developers {
   background: #fff;
-  width: 90vmin;
+  /* width: 90vmin; */
   padding: 2.5vmin;
   border-radius: 8px;
   position: absolute;
