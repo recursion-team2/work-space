@@ -3,22 +3,87 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="main.js"></script>
     <title>おみくじ</title>
   </head>
   <body>
-    <h1>おみくじ</h1>
-    <div id="main">
-      <button type="button" id="draw">おみくじを引く</button>
-    </div>
-    <div id="fortune" class="hide">
-      <div id="fortune-title">運勢</div>
-      <div id="lucky-color">ラッキーカラー</div>
-      <div id="lucky-food">おすすめの食べ物</div>
-      <div id="lucky-place">おすすめの場所</div>
+    <div
+      id="container"
+      class="d-flex justify-content-center flex-column text-center"
+    >
+      <div>
+        <h1>おみくじ</h1>
+        <div id="main" class="flex-row">
+          <div id="draw">
+            <p>
+              <img
+                class="light mx-auto img-domecover"
+                src="images/cooking_cloche_domecover_close.png"
+              />
+            </p>
+            <div class="mx-auto">
+              <button type="button" class="btn btn-danger btn-lg">
+                おみくじを引く
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="fortune" class="hide">
+          <div id="fortune-title">運勢</div>
+          <div id="lucky-color">ラッキーカラー</div>
+          <div id="lucky-food">おすすめの食べ物</div>
+          <div id="lucky-place">おすすめの場所</div>
 
-      <button type="button" id="retry">もう一度やる</button>
+          <button type="button" id="retry" class="btn btn-warning">
+            もう一度やる
+          </button>
+        </div>
+      </div>
+      <div id="about" class="hide">
+        <h2>このおみくじについて</h2>
+        <p>
+          このおみくじは、コンピュータ・サイエンスの学習プラットフォーム
+          Recursion
+          で開催されているイベント「チーム開発体験会」の課題として制作されたものです。
+        </p>
+        <p>あなたのソフトウェア開発の行方を占います。</p>
+        <p>
+          「チーム開発体験会」が催される度におみくじの種類が増えてゆきますので、納得しかねるおみくじを引いてしまっても懲りずにまた引きに来るのが吉です。
+        </p>
+      </div>
+      <div id="developers" class="hide">
+        <h2>開発者一覧</h2>
+        <ul>
+          <li>akemashita</li>
+          <li>chia3</li>
+          <li>tyz8250</li>
+        </ul>
+      </div>
     </div>
+    <footer>
+      <div class="d-flex flex-column">
+        <div class="d-flex justify-content-center">
+          <div class=""></div>
+          <a href="#" id="show-about" class="btn btn-outline-secondary btn-sm">
+            このアプリについて
+          </a>
+          <a
+            href="#"
+            id="show-developers"
+            class="btn btn-outline-secondary mx-2 btn-sm"
+          >
+            開発者一覧
+          </a>
+        </div>
+      </div>
+    </footer>
+    <div id="mask" class="hide"></div>
   </body>
 </html>

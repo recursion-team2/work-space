@@ -34,6 +34,12 @@ const luckyColorElement = document.getElementById('lucky-color');
 const luckyFoodElement = document.getElementById('lucky-food');
 const luckyPlaceElement = document.getElementById('lucky-place');
 
+const maskArea = document.getElementById('mask');
+const aboutArea = document.getElementById('about');
+const aboutButton = document.getElementById('show-about');
+const developersArea = document.getElementById('developers');
+const developersButton = document.getElementById('show-developers');
+
 // おみくじを引く
 function drawFortune() {
 
@@ -92,3 +98,36 @@ retryButton.addEventListener('click', () => {
   fortuneArea.classList.add('hide'); // おみくじの結果の領域を隠す
   mainArea.classList.remove('hide'); // おみくじを引くボタンの領域を表示する
 });
+
+
+// このアプリについてボタンをクリックしたとき
+const toggleAboutArea = () => {
+  mask.classList.toggle('hide');
+  aboutArea.classList.toggle('hide');
+}
+
+aboutButton.addEventListener('click', toggleAboutArea);
+
+// アプリについての領域をクリックしたとき
+aboutArea.addEventListener('click', toggleAboutArea);
+
+
+// 開発者一覧のボタンをクリックしたとき
+const toggleDevelopersArea = () => {
+  maskArea.classList.toggle('hide');
+  developersArea.classList.toggle('hide');
+}
+
+developersButton.addEventListener('click', toggleDevelopersArea);
+
+// 開発者一覧の領域をクリックしたとき
+developersArea.addEventListener('click', toggleDevelopersArea);
+
+// マスク領域をクリックしたとき
+const hideBothArea = () => {
+  maskArea.classList.add('hide');
+  aboutArea.classList.add('hide');
+  developersArea.classList.add('hide');
+}
+
+maskArea.addEventListener('click', hideBothArea);
