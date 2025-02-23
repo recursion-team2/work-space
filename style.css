@@ -16,9 +16,6 @@ ul {
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
 }
 
-.img-domecover {
-  height: 240px;
-}
 
 /* Effect */
 a {
@@ -58,29 +55,34 @@ a:visited {
 
 #fortune ul {
   list-style: none;
+  display: inline;
 }
 
 .main-dish::before {
-  content: "メイン：";
+  content: "✿メイン：";
+}
+
+.main-dish::after {
+  content: "✿";
 }
 
 .side-dish::before {
-  content: "副菜：";
+  content: "✿副菜：";
+}
+
+.side-dish::after {
+  content: "✿";
 }
 
 
 /* footer に関するレイアウト */
 footer {
   margin: 2rem auto;
-  color: red;
 }
 
-footer a {
-  color: red;
-  text-decoration: none;
+footer.hide {
+  display: none;
 }
-
-
 
 #mask {
   background: rgba(0, 0, 0, 0.4);

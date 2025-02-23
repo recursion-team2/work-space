@@ -36,7 +36,7 @@
               </div>
             </div>
           </div>
-          <div id="fortune" class="hide bg-white text-danger p-3">
+          <div id="fortune" class="hide bg-white text-center text-danger p-3">
             <h2>今日の夜ごはん</h2>
             <hr />
             <div id="first-suggestion">
@@ -62,11 +62,12 @@
                     src="images\food_potato_sald.png"
                   />
                 </p>
-                <ul>
+                <ul class="link-danger">
                   <li id="first-recipe">
                     <a
                       href="https://cookpad.com/jp/search/%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E"
                       target="_blank"
+                      class="link-danger"
                       >レシピを調べる</a
                     >
                   </li>
@@ -74,6 +75,7 @@
                     <a
                       href="https://maps.google.co.jp/maps?q=%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E"
                       target="_blank"
+                      class="link-danger"
                       >近くで食べられるところ</a
                     >
                   </li>
@@ -88,8 +90,16 @@
               <h3 id="second-side-menu" class="side-dish">２番目の副菜</h3>
 
               <ul>
-                <li id="second-recipe"><a href="#">作り方を調べる</a></li>
-                <li id="second-find"><a href="#">食べられるところを探す</a></li>
+                <li id="second-recipe">
+                  <a href="#" target="_blank" class="link-danger"
+                    >作り方を調べる</a
+                  >
+                </li>
+                <li id="second-find">
+                  <a href="#" target="_blank" class="link-danger"
+                    >食べられるところを探す</a
+                  >
+                </li>
               </ul>
             </div>
             <hr />
@@ -101,10 +111,23 @@
               <h3 id="third-side-menu" class="side-dish">３番目の副菜</h3>
 
               <ul>
-                <li id="third-recipe"><a href="#">作り方を調べる</a></li>
-                <li id="third-find"><a href="#">食べられるところを探す</a></li>
+                <li id="third-recipe">
+                  <a href="#" target="_blank" class="link-danger"
+                    >作り方を調べる</a
+                  >
+                </li>
+                <li id="third-find">
+                  <a href="#" target="_blank" class="link-danger"
+                    >食べられるところを探す</a
+                  >
+                </li>
               </ul>
             </div>
+
+            <div id="fortune-title">運勢</div>
+            <div id="lucky-color">ラッキーカラー</div>
+            <div id="lucky-food">おすすめの食べ物</div>
+            <div id="lucky-place">おすすめの場所</div>
 
             <button type="button" id="retry" class="btn btn-danger mt-3">
               もう一度、やってみる
@@ -131,11 +154,15 @@
             <li>tyz8250</li>
           </ul>
         </div>
-        <footer>
+        <footer id="footer" class="">
           <div class="d-flex flex-column">
-            <div class="d-flex justify-content-center link-danger">
-              <a href="#" id="show-about" class="">このアプリについて</a>｜
-              <a href="#" id="show-developers" class=""> 開発者一覧 </a>
+            <div class="d-flex justify-content-center">
+              <a href="#" id="show-about" class="link-danger"
+                >このアプリについて</a
+              >｜
+              <a href="#" id="show-developers" class="link-danger">
+                開発者一覧
+              </a>
             </div>
           </div>
         </footer>

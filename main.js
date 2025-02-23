@@ -39,6 +39,7 @@ const aboutArea = document.getElementById('about');
 const aboutButton = document.getElementById('show-about');
 const developersArea = document.getElementById('developers');
 const developersButton = document.getElementById('show-developers');
+const footerArea = document.getElementById('footer');
 
 // おみくじを引く
 function drawFortune() {
@@ -89,6 +90,7 @@ function updateFortune() {
 // おみくじを引くボタンを押したとき
 drawButton.addEventListener('click', () => {
   mainArea.classList.add('hide'); // おみくじを引くボタンの領域を隠す
+  footerArea.classList.add('hide'); // このアプリについて・・・の領域を隠す
   fortuneArea.classList.remove('hide'); // おみくじの結果の領域を表示する
   updateFortune(); // おみくじの結果を表示する
 });
@@ -97,6 +99,7 @@ drawButton.addEventListener('click', () => {
 retryButton.addEventListener('click', () => {
   fortuneArea.classList.add('hide'); // おみくじの結果の領域を隠す
   mainArea.classList.remove('hide'); // おみくじを引くボタンの領域を表示する
+  footerArea.classList.remove('hide'); // このアプリについて・・・の領域を表示する
 });
 
 
