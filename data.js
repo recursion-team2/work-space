@@ -1,10 +1,3 @@
-// fortuneTitles削除？
-export const fortuneTitles = {
-  "dai-kichi": "大吉",
-  "kichi": "吉",
-  "kyou": "凶",
-}
-
 // メインディッシュ
 // luckyColors → mainDishesに変更
 // 4項目 → 9目に変更
@@ -36,5 +29,3 @@ export const sideDishes = [
   ["おひたし", "〇〇〇"],
   ["煮物", "〇〇〇"],
 ];
-
-// luckyPlaces削除？ -->削除しました。

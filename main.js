@@ -1,23 +1,21 @@
 // main.js
 
-// おみくじのデータを別ファイルから読み込む
+// 夜ごはんのデータを別ファイルから読み込む
 import * as data from "./data.js";
 
 // -----------------------------------------------------------------------------
-// 以下、おみくじアプリの処理
+// 以下、夜ごはん提案アプリの処理
 // -----------------------------------------------------------------------------
 
 // コンソールにデバッグ情報を表示するか？
 const debugMode = true;
 
 // mainDishes,sideDishesのそれぞれの個数を取得
-const NumberOfFortuneTitles = Object.keys(data.fortuneTitles).length;//削除でも良い？
 const NumberOfMainDishes = data.mainDishes.length;
 const NumberOfSideDishes = data.sideDishes.length;
 
 if (debugMode) {
   console.log(`[DEBUG] NumberOf...
-    FortuneTitles: ${NumberOfFortuneTitles},
     MainDishes: ${NumberOfMainDishes},
     SideDishes: ${NumberOfSideDishes}`);
 }
@@ -28,7 +26,6 @@ const fortuneArea = document.getElementById('fortune');
 const drawButton = document.getElementById('draw');
 const retryButton = document.getElementById('retry');
 
-const fortuneTitleElement = document.getElementById('fortune-title');//削除でも良い？
 const mainDishesElement = document.getElementById('first-menu');
 const mainDishesDescriptionElement = document.getElementById('first-description');
 const mainDishesPictureElement = document.getElementById('first-maindish-picture');
@@ -42,24 +39,14 @@ const developersArea = document.getElementById('developers');
 const developersButton = document.getElementById('show-developers');
 const footerArea = document.getElementById('footer');
 
-// おみくじを引く
-function drawFortune() {
+// 晩ご飯をランダムで提案する
+function drawDinner() {
 
   // 乱数を生成する
-  const fortuneNumber = Math.trunc(Math.random() * 10 + 1); // [1 - 10]までの値 -->料理が9個なので10が出た場合エラーとなる？
+  const fortuneNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値 
   if (debugMode) {
     console.log(`====================\n[DEBUG] fortuneNumber: ${fortuneNumber}`);
   }
-
-  // fortuneTitle をセットする
-  let fortuneTitle = data.fortuneTitles["kichi"];
-  if (fortuneNumber === 7) {
-    fortuneTitle = data.fortuneTitles["dai-kichi"];
-  }
-  if (fortuneNumber === 9) {
-    fortuneTitle = data.fortuneTitles["kyou"];
-  }
-  if (debugMode) console.log(`[DEBUG] fortuneTitle: ${fortuneTitle}`);
 
   // mainDish をセットする
   let mainDish = data.mainDishes[fortuneNumber % NumberOfMainDishes]; // fortuneNumber に応じて必ず mainDishes のいずれかを割り当てる
@@ -69,33 +56,32 @@ function drawFortune() {
   let sideDish = data.sideDishes[fortuneNumber % NumberOfSideDishes];
   if (debugMode) console.log(`[DEBUG] sideDish: ${sideDish}`);
 
-  return [fortuneTitle, mainDish, sideDish];
+  return [mainDish, sideDish];
 }
 
-// おみくじの結果を表示する
-function updateFortune() {
-  const resultFortune = drawFortune(); // おみくじを引いた結果（配列）を保存する変数
-  fortuneTitleElement.textContent = resultFortune[0]; // fortuneTitle
-  mainDishesElement.textContent = resultFortune[1][0]; // mainDish の料理名
-  //first-maindish-pictureElement.src = resultFortune[1][1]; // mainDish の 画像(実装まだ)
-  mainDishesDescriptionElement.textContent = resultFortune[1][2]; // mainDish の説明文
-  sideDishesElement.textContent = resultFortune[2][0]; // sideDish の料理名
-  //first-sidedish-pictureElement.src = resultFortune[1][1]; // sideDish の 画像(実装まだ)
+// 夜ご飯の提案結果を表示する
+function updateDinner() {
+  const resultDinner = drawDinner(); // 提案する晩ご飯の結果（配列）を保存する変数
+  mainDishesElement.textContent = resultDinner[0][0]; // mainDish の料理名
+  //first-maindish-pictureElement.src = resultDinner[0][1]; // mainDish の 画像(実装まだ)
+  mainDishesDescriptionElement.textContent = resultDinner[0][2]; // mainDish の説明文
+  sideDishesElement.textContent = resultDinner[1][0]; // sideDish の料理名
+  //first-sidedish-pictureElement.src = resultDinner[1][1]; // sideDish の 画像(実装まだ)
 }
 
 
-// おみくじを引くボタンを押したとき
+// 夜ごはんを提案するボタンを押したとき
 drawButton.addEventListener('click', () => {
-  mainArea.classList.add('hide'); // おみくじを引くボタンの領域を隠す
+  mainArea.classList.add('hide'); // 夜ごはんを提案するボタンの領域を隠す
   footerArea.classList.add('hide'); // このアプリについて・・・の領域を隠す
-  fortuneArea.classList.remove('hide'); // おみくじの結果の領域を表示する
-  updateFortune(); // おみくじの結果を表示する
+  fortuneArea.classList.remove('hide'); // 夜ごはん提案結果の領域を表示する
+  updateDinner(); // 夜ごはん提案の結果を表示する
 });
 
 // もう一度やるボタンを押したとき
 retryButton.addEventListener('click', () => {
-  fortuneArea.classList.add('hide'); // おみくじの結果の領域を隠す
-  mainArea.classList.remove('hide'); // おみくじを引くボタンの領域を表示する
+  fortuneArea.classList.add('hide'); // 夜ごはん提案結果の領域を隠す
+  mainArea.classList.remove('hide'); // 夜ごはん提案するボタンの領域を表示する
   footerArea.classList.remove('hide'); // このアプリについて・・・の領域を表示する
 });
 
