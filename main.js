@@ -10,17 +10,16 @@ import * as data from "./data.js";
 // コンソールにデバッグ情報を表示するか？
 const debugMode = true;
 
-// おみくじの内容の個数をそれぞれ取得
-const NumberOfFortuneTitles = Object.keys(data.fortuneTitles).length;
-const NumberOfLuckyColors = data.luckyColors.length;
-const NumberOfLuckyFoods = data.luckyFoods.length;
-const NumberOfLuckyPlaces = data.luckyPlaces.length;
+// mainDishes,sideDishesのそれぞれの個数を取得
+const NumberOfFortuneTitles = Object.keys(data.fortuneTitles).length;//削除でも良い？
+const NumberOfMainDishes = data.mainDishes.length;
+const NumberOfSideDishes = data.sideDishes.length;
+
 if (debugMode) {
   console.log(`[DEBUG] NumberOf...
     FortuneTitles: ${NumberOfFortuneTitles},
-    LuckyColors: ${NumberOfLuckyColors},
-    LuckyFoods: ${NumberOfLuckyFoods},
-    LuckyPlaces: ${NumberOfLuckyPlaces}`);
+    MainDishes: ${NumberOfMainDishes},
+    SideDishes: ${NumberOfSideDishes}`);
 }
 
 // index.html にある要素を以下のコードで指定しやすくしています
@@ -29,10 +28,12 @@ const fortuneArea = document.getElementById('fortune');
 const drawButton = document.getElementById('draw');
 const retryButton = document.getElementById('retry');
 
-const fortuneTitleElement = document.getElementById('fortune-title');
-const luckyColorElement = document.getElementById('lucky-color');
-const luckyFoodElement = document.getElementById('lucky-food');
-const luckyPlaceElement = document.getElementById('lucky-place');
+const fortuneTitleElement = document.getElementById('fortune-title');//削除でも良い？
+const mainDishesElement = document.getElementById('first-menu');
+const mainDishesDescriptionElement = document.getElementById('first-description');
+const mainDishesPictureElement = document.getElementById('first-maindish-picture');
+const sideDishesElement = document.getElementById('first-side-menu');
+const sideDishesPictureElement = document.getElementById('first-sidemenue-picture')
 
 const maskArea = document.getElementById('mask');
 const aboutArea = document.getElementById('about');
@@ -45,7 +46,7 @@ const footerArea = document.getElementById('footer');
 function drawFortune() {
 
   // 乱数を生成する
-  const fortuneNumber = Math.trunc(Math.random() * 10 + 1); // [1 - 10]までの値
+  const fortuneNumber = Math.trunc(Math.random() * 10 + 1); // [1 - 10]までの値 -->料理が9個なので10が出た場合エラーとなる？
   if (debugMode) {
     console.log(`====================\n[DEBUG] fortuneNumber: ${fortuneNumber}`);
   }
@@ -60,30 +61,26 @@ function drawFortune() {
   }
   if (debugMode) console.log(`[DEBUG] fortuneTitle: ${fortuneTitle}`);
 
-  // luckyColor をセットする
-  let luckyColor = data.luckyColors[fortuneNumber % NumberOfLuckyColors]; // fortuneNumber に応じて必ず luckyColors のいずれかを割り当てる
-  if (debugMode) console.log(`[DEBUG] luckyColor: ${luckyColor}`);
+  // mainDish をセットする
+  let mainDish = data.mainDishes[fortuneNumber % NumberOfMainDishes]; // fortuneNumber に応じて必ず mainDishes のいずれかを割り当てる
+  if (debugMode) console.log(`[DEBUG] mainDish: ${mainDish}`);
 
-  // luckyFood をセットする
-  let luckyFood = data.luckyFoods[fortuneNumber % NumberOfLuckyFoods];
-  if (debugMode) console.log(`[DEBUG] luckyFood: ${luckyFood}`);
+  // sideDish をセットする
+  let sideDish = data.sideDishes[fortuneNumber % NumberOfSideDishes];
+  if (debugMode) console.log(`[DEBUG] sideDish: ${sideDish}`);
 
-  // luckyPlace をセットする
-  let luckyPlace = data.luckyPlaces[fortuneNumber % NumberOfLuckyPlaces];
-  if (debugMode) console.log(`[DEBUG] luckyPlace: ${luckyPlace}`);
-
-  return [fortuneTitle, luckyColor, luckyFood, luckyPlace];
+  return [fortuneTitle, mainDish, sideDish];
 }
 
 // おみくじの結果を表示する
 function updateFortune() {
   const resultFortune = drawFortune(); // おみくじを引いた結果（配列）を保存する変数
   fortuneTitleElement.textContent = resultFortune[0]; // fortuneTitle
-  luckyColorElement.textContent = resultFortune[1][0]; // luckyColor の色名
-  fortuneArea.style.backgroundColor = resultFortune[1][1]; // luckyColor の 色コード
-  luckyColorElement.textContent += resultFortune[1][2]; // luckyColor の説明文
-  luckyFoodElement.textContent = resultFortune[2]; // luckyFood の配列（食べ物名, 説明文）
-  luckyPlaceElement.textContent = resultFortune[3]; // luckyPlace の配列（場所名, 説明文）
+  mainDishesElement.textContent = resultFortune[1][0]; // mainDish の料理名
+  //first-maindish-pictureElement.src = resultFortune[1][1]; // mainDish の 画像(実装まだ)
+  mainDishesDescriptionElement.textContent = resultFortune[1][2]; // mainDish の説明文
+  sideDishesElement.textContent = resultFortune[2][0]; // sideDish の料理名
+  //first-sidedish-pictureElement.src = resultFortune[1][1]; // sideDish の 画像(実装まだ)
 }
 
 
