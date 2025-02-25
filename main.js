@@ -3,6 +3,12 @@
 // 夜ごはんのデータを別ファイルから読み込む
 import * as data from "./data.js";
 
+// レシピサイトの基となるURL
+const recipeBaseURL = 'https://cookpad.com/jp/search/';
+
+// 地図サイトの基となるURL
+const mapBaseURL = 'https://www.google.com/maps/search/?api=1&query=';
+
 // -----------------------------------------------------------------------------
 // 以下、夜ごはん提案アプリの処理
 // -----------------------------------------------------------------------------
@@ -31,6 +37,8 @@ const mainDishesDescriptionElement = document.getElementById('first-description'
 const mainDishesPictureElement = document.getElementById('first-maindish-picture');
 const sideDishesElement = document.getElementById('first-side-menu');
 const sideDishesPictureElement = document.getElementById('first-sidemenue-picture')
+const firstMenuRecipeLink = document.getElementById('first-menu-recipe-link');
+const firstMenuMapLink = document.getElementById('first-menu-map-link')
 
 const maskArea = document.getElementById('mask');
 const aboutArea = document.getElementById('about');
@@ -43,7 +51,7 @@ const footerArea = document.getElementById('footer');
 function drawDinner() {
 
   // 乱数を生成する
-  const fortuneNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値 
+  const fortuneNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
   if (debugMode) {
     console.log(`====================\n[DEBUG] fortuneNumber: ${fortuneNumber}`);
   }
@@ -67,6 +75,11 @@ function updateDinner() {
   mainDishesDescriptionElement.textContent = resultDinner[0][2]; // mainDish の説明文
   sideDishesElement.textContent = resultDinner[1][0]; // sideDish の料理名
   //first-sidedish-pictureElement.src = resultDinner[1][1]; // sideDish の 画像(実装まだ)
+
+  const encodedMainDishName = encodeURIComponent(resultDinner[0][0]); // mainDish の料理名をエンコードする
+  const nowOpen = encodeURIComponent(' 営業中'); // mapの絞り込み条件「 営業中」をエンコードする
+  firstMenuRecipeLink.setAttribute('href', recipeBaseURL + encodedMainDishName); // レシピを調べるリンクの href 属性の値を置き換える
+  firstMenuMapLink.setAttribute('href', mapBaseURL + encodedMainDishName + nowOpen); // 近くで食べられるところを探すリンクの href 属性の値を置き換える
 }
 
 
