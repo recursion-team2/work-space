@@ -15,14 +15,21 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <script type="module" src="main.js"></script>
     <title>夜ごはん提案アプリ（仮）</title>
   </head>
   <body>
-    <div id="container" class="container min-vh-100 d-flex align-items-center">
+    <div
+      id="container"
+      class="container min-vh-100 d-flex justify-content-center align-items-center"
+    >
       <div class="row justify-content-center">
-        <div class="col-lg-5 col-md-8 col-10 my-4 text-center">
+        <div class="col-lg-4 col-md-6 col-sm-8 col-10 my-4 text-center">
           <div
             id="main"
             class="row justify-content-center align-items-center p-3"
@@ -37,7 +44,7 @@
               </p>
               <div class="mx-auto">
                 <button type="button" class="btn btn-danger btn-lg">
-                  夜ごはん提案する
+                  夜ごはんを提案する
                 </button>
               </div>
             </div>
@@ -47,49 +54,52 @@
             <hr />
             <div id="first-suggestion">
               <div>
-                <h3 id="first-menu" class="main-dish">ペペロンチーノ</h3>
+                <h3 id="first-menu" class="main-dish">選ばれた主菜</h3>
                 <p>
                   <img
                     id="first-maindish-picture"
-                    class="col-md-8 col-10"
+                    class="col-8"
                     src="images\food_curryruce.png"
                   />
                 </p>
               </div>
-              <p id="first-description">
-                材料は至ってシンプル。完成されたレシピに余計なものはいらない。そんな今夜はペペロンチーノ。
-              </p>
+              <p id="first-description">ひとことコメント</p>
+              <ul
+                class="link-danger d-grid gap-2 d-flex justify-content-center"
+              >
+                <li id="first-recipe">
+                  <a
+                    href="#"
+                    target="_blank"
+                    id="first-menu-recipe-link"
+                    class="btn btn-outline-danger btn-sm"
+                    ><i class="bi bi-search"></i>レシピを調べる</a
+                  >
+                </li>
+                <li id="first-menu-map">
+                  <a
+                    href="#"
+                    target="_blank"
+                    id="first-menu-map-link"
+                    class="btn btn-outline-danger btn-sm"
+                    ><i class="bi bi-geo-alt-fill"></i>近くで食べられるところ</a
+                  >
+                </li>
+              </ul>
+              <hr />
               <div>
-                <h3 id="first-side-menu" class="side-dish">ポテトサラダ</h3>
+                <h4 id="first-side-menu" class="side-dish">選ばれた副菜</h4>
                 <p>
                   <img
                     id="first-sidemenue-picture"
-                    class="col-md-8 col-10"
+                    class="col-6"
                     src="images\food_potato_sald.png"
                   />
                 </p>
-                <ul class="link-danger">
-                  <li id="first-recipe">
-                    <a
-                      href="https://cookpad.com/jp/search/%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E"
-                      target="_blank"
-                      class="link-danger"
-                      >レシピを調べる</a
-                    >
-                  </li>
-                  <li id="first-menu-map">
-                    <a
-                      href="https://maps.google.co.jp/maps?q=%E3%83%9A%E3%83%9A%E3%83%AD%E3%83%B3%E3%83%81%E3%83%BC%E3%83%8E"
-                      target="_blank"
-                      class="link-danger"
-                      >近くで食べられるところ</a
-                    >
-                  </li>
-                </ul>
               </div>
             </div>
+            <!-- いったん１種類の提案のみを表示するようにしました。
             <hr />
-
             <div id="second-suggestion">
               <h3 id="second-menu" class="main-dish">２番目のメニュー</h3>
               <p id="second-description">ひとこと</p>
@@ -130,32 +140,41 @@
               </ul>
             </div>
 
-            <div id="main-dish">主菜</div>
-            <div id="side-dish">副菜</div>
+                        <div id="main-dish">主菜</div>
+                        <div id="side-dish">副菜</div>
+             -->
 
             <button type="button" id="retry" class="btn btn-danger mt-3">
               もう一度、やってみる
             </button>
           </div>
         </div>
-        <div id="about" class="hide col-lg-5 col-md-8 col-10 my-4">
+        <div id="about" class="hide col-lg-3 col-md-4 col-sm-6 col-8">
           <h2>このおみくじについて</h2>
           <p>
-            このおみくじは、コンピュータ・サイエンスの学習プラットフォーム
-            Recursion
-            で開催されているイベント「チーム開発体験会」の課題として制作されたものです。
+            このアプリは、コンピュータ・サイエンスの学習プラットフォーム
+            Recursionで開催されているイベント「チーム開発体験会」の課題として制作されたものです。
           </p>
-          <p>あなたのソフトウェア開発の行方を占います。</p>
+          <p>あなたの今日の晩ご飯を提案します。</p>
           <p>
-            「チーム開発体験会」が催される度におみくじの種類が増えてゆきますので、納得しかねるおみくじを引いてしまっても懲りずにまた引きに来るのが吉です。
+            「チーム開発体験会」で脳を振り絞ったあなたにお勧めな晩ご飯を提案します。主菜と副菜、なんと主菜はクックパッドとGooglemapへのリンクもついています。ぜひ美味しく召し上がれ。
           </p>
         </div>
-        <div id="developers" class="hide col-lg-5 col-md-8 col-10 my-4">
+        <div id="developers" class="hide col-lg-3 col-md-4 col-sm-6 col-8">
           <h2>開発者一覧</h2>
           <ul>
-            <li>akemashita</li>
-            <li>chia3</li>
-            <li>tyz8250</li>
+            <li>
+              <a href="https://github.com/akemashita">akemashita</a
+              ><br />（たたき台の作成・レイアウトの調整）
+            </li>
+            <li>
+              <a href="https://github.com/chia3blue">chia3</a
+              ><br />（アプリのベース案作成・データベース作成）
+            </li>
+            <li>
+              <a href="https://github.com/tyz8250">tyz8250</a
+              ><br />（Javascriptによる仕組みの作成）
+            </li>
           </ul>
         </div>
         <footer id="footer" class="">
