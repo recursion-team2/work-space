@@ -55,24 +55,28 @@ a:visited {
 
 #fortune ul {
   list-style: none;
-  display: inline;
+  padding-left: 0;
 }
 
 .main-dish::before {
-  content: "✿メイン：";
+  content: "✿メイン✿\A";
+  font-size: 0.8em;
+  white-space: pre
 }
 
-.main-dish::after {
+/* .main-dish::after {
   content: "✿";
-}
+} */
 
 .side-dish::before {
-  content: "✿副菜：";
+  content: "✿副菜✿\A";
+  font-size: 0.8em;
+  white-space: pre
 }
 
-.side-dish::after {
+/* .side-dish::after {
   content: "✿";
-}
+} */
 
 
 /* footer に関するレイアウト */
@@ -100,15 +104,16 @@ footer.hide {
 
 #about,
 #developers {
+  outline: 0.2rem solid #fcb69f;
   background: #fff;
   /* width: 90vmin; */
-  padding: 2.5vmin;
+  padding: 1rem;
   border-radius: 8px;
   position: absolute;
-  top: 20vmax;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  /* top: 20vmax; */
+  /* left: 0; */
+  /* right: 0; */
+  /* margin: auto auto; */
   transition: transform 0.4s;
   z-index: 2;
 }
