@@ -36,24 +36,24 @@ a:visited {
 /* main 領域に関するもの */
 
 #main.hide,
-#fortune.hide {
+#dinner.hide {
   display: none;
 }
 
 
-/* fortune 領域に関するもの */
+/* dinner 領域に関するもの */
 
-#fortune {
+#dinner {
   border: thick double red;
   outline: 0.2rem solid red;
   overflow-x: hidden;
 }
 
-#fortune hr {
+#dinner hr {
   border-top: 2px solid red;
 }
 
-#fortune ul {
+#dinner ul {
   list-style: none;
   padding-left: 0;
 }
