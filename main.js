@@ -47,6 +47,8 @@ const developersArea = document.getElementById('developers');
 const developersButton = document.getElementById('show-developers');
 const footerArea = document.getElementById('footer');
 
+const targetArea = document.getElementById('target');
+
 // 晩ご飯をランダムで提案する
 function drawDinner() {
 
@@ -87,6 +89,7 @@ function updateDinner() {
 drawButton.addEventListener('click', () => {
   mainArea.classList.add('hide'); // 夜ごはんを提案するボタンの領域を隠す
   footerArea.classList.add('hide'); // このアプリについて・・・の領域を隠す
+  targetArea.classList.add('fix-width'); // 親divの幅を固定して表示崩れを防ぐ
   dinnerArea.classList.remove('hide'); // 夜ごはん提案結果の領域を表示する
   updateDinner(); // 夜ごはん提案の結果を表示する
 });
@@ -94,6 +97,7 @@ drawButton.addEventListener('click', () => {
 // もう一度やるボタンを押したとき
 retryButton.addEventListener('click', () => {
   dinnerArea.classList.add('hide'); // 夜ごはん提案結果の領域を隠す
+  targetArea.classList.remove('fix-width'); // 親divの幅固定を解除
   mainArea.classList.remove('hide'); // 夜ごはん提案するボタンの領域を表示する
   footerArea.classList.remove('hide'); // このアプリについて・・・の領域を表示する
 });

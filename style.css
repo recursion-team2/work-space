@@ -43,6 +43,12 @@ a:visited {
 
 /* dinner 領域に関するもの */
 
+.fix-width {
+  max-width: 100%; /* 画面幅に応じて最大サイズを調整 */
+  width: 350px; /* デフォルトの幅 */
+  height: auto;
+}
+
 #dinner {
   border: thick double red;
   outline: 0.2rem solid red;
