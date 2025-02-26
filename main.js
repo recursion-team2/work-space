@@ -28,7 +28,7 @@ if (debugMode) {
 
 // index.html にある要素を以下のコードで指定しやすくしています
 const mainArea = document.getElementById('main');
-const fortuneArea = document.getElementById('fortune');
+const dinnerArea = document.getElementById('dinner');
 const drawButton = document.getElementById('draw');
 const retryButton = document.getElementById('retry');
 
@@ -36,7 +36,7 @@ const mainDishesElement = document.getElementById('first-menu');
 const mainDishesDescriptionElement = document.getElementById('first-description');
 const mainDishesPictureElement = document.getElementById('first-maindish-picture');
 const sideDishesElement = document.getElementById('first-side-menu');
-const sideDishesPictureElement = document.getElementById('first-sidemenue-picture')
+const sideDishesPictureElement = document.getElementById('first-side-menu-picture')
 const firstMenuRecipeLink = document.getElementById('first-menu-recipe-link');
 const firstMenuMapLink = document.getElementById('first-menu-map-link')
 
@@ -51,17 +51,17 @@ const footerArea = document.getElementById('footer');
 function drawDinner() {
 
   // 乱数を生成する
-  const fortuneNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
+  const dinnerNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
   if (debugMode) {
-    console.log(`====================\n[DEBUG] fortuneNumber: ${fortuneNumber}`);
+    console.log(`====================\n[DEBUG] dinnerNumber: ${dinnerNumber}`);
   }
 
   // mainDish をセットする
-  let mainDish = data.mainDishes[fortuneNumber % NumberOfMainDishes]; // fortuneNumber に応じて必ず mainDishes のいずれかを割り当てる
+  let mainDish = data.mainDishes[dinnerNumber % NumberOfMainDishes]; // dinnerNumber に応じて必ず mainDishes のいずれかを割り当てる
   if (debugMode) console.log(`[DEBUG] mainDish: ${mainDish}`);
 
   // sideDish をセットする
-  let sideDish = data.sideDishes[fortuneNumber % NumberOfSideDishes];
+  let sideDish = data.sideDishes[dinnerNumber % NumberOfSideDishes];
   if (debugMode) console.log(`[DEBUG] sideDish: ${sideDish}`);
 
   return [mainDish, sideDish];
@@ -71,10 +71,10 @@ function drawDinner() {
 function updateDinner() {
   const resultDinner = drawDinner(); // 提案する晩ご飯の結果（配列）を保存する変数
   mainDishesElement.textContent = resultDinner[0][0]; // mainDish の料理名
-  //first-maindish-pictureElement.src = resultDinner[0][1]; // mainDish の 画像(実装まだ)
+  mainDishesPictureElement.src = resultDinner[0][1]; // mainDish の 画像
   mainDishesDescriptionElement.textContent = resultDinner[0][2]; // mainDish の説明文
   sideDishesElement.textContent = resultDinner[1][0]; // sideDish の料理名
-  //first-sidedish-pictureElement.src = resultDinner[1][1]; // sideDish の 画像(実装まだ)
+  sideDishesPictureElement.src = resultDinner[1][1]; // sideDish の 画像
 
   const encodedMainDishName = encodeURIComponent(resultDinner[0][0]); // mainDish の料理名をエンコードする
   const nowOpen = encodeURIComponent(' 営業中'); // mapの絞り込み条件「 営業中」をエンコードする
@@ -87,13 +87,13 @@ function updateDinner() {
 drawButton.addEventListener('click', () => {
   mainArea.classList.add('hide'); // 夜ごはんを提案するボタンの領域を隠す
   footerArea.classList.add('hide'); // このアプリについて・・・の領域を隠す
-  fortuneArea.classList.remove('hide'); // 夜ごはん提案結果の領域を表示する
+  dinnerArea.classList.remove('hide'); // 夜ごはん提案結果の領域を表示する
   updateDinner(); // 夜ごはん提案の結果を表示する
 });
 
 // もう一度やるボタンを押したとき
 retryButton.addEventListener('click', () => {
-  fortuneArea.classList.add('hide'); // 夜ごはん提案結果の領域を隠す
+  dinnerArea.classList.add('hide'); // 夜ごはん提案結果の領域を隠す
   mainArea.classList.remove('hide'); // 夜ごはん提案するボタンの領域を表示する
   footerArea.classList.remove('hide'); // このアプリについて・・・の領域を表示する
 });
