@@ -12,6 +12,10 @@ ul {
   list-style-type: square;
 }
 
+ul.check {
+  list-style-type: "✅";
+}
+
 a,
 a:hover,
 a:visited {
