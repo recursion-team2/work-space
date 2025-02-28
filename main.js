@@ -14,16 +14,16 @@ const mapBaseURL = 'https://www.google.com/maps/search/?api=1&query=';
 // -----------------------------------------------------------------------------
 
 // コンソールにデバッグ情報を表示するか？
-const debugMode = true;
+const debugMode = false;
 
 // mainDishes,sideDishesのそれぞれの個数を取得
-const NumberOfMainDishes = data.mainDishes.length;
-const NumberOfSideDishes = data.sideDishes.length;
+const numberOfMainDishes = data.mainDishes.length;
+const numberOfSideDishes = data.sideDishes.length;
 
 if (debugMode) {
-  console.log(`[DEBUG] NumberOf...
-    MainDishes: ${NumberOfMainDishes},
-    SideDishes: ${NumberOfSideDishes}`);
+  console.log(`[DEBUG] numberOf...
+    MainDishes: ${numberOfMainDishes},
+    SideDishes: ${numberOfSideDishes}`);
 }
 
 // index.html にある要素を以下のコードで指定しやすくしています
@@ -53,22 +53,22 @@ const targetArea = document.getElementById('target');
 function drawDinner() {
 
   // 主菜の乱数を生成する
-  const mainDinnerNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
+  const mainDinnerNumber = Math.trunc(Math.random() * 100); // [0 - 99]までの値
   if (debugMode) {
     console.log(`====================\n[DEBUG] mainDinnerNumber: ${mainDinnerNumber}`);
   }
 
   // mainDish をセットする
-  let mainDish = data.mainDishes[mainDinnerNumber % NumberOfMainDishes]; // mainDinnerNumber に応じて必ず mainDishes のいずれかを割り当てる
+  let mainDish = data.mainDishes[mainDinnerNumber % numberOfMainDishes]; // mainDinnerNumber に応じて必ず mainDishes のいずれかを割り当てる
   if (debugMode) console.log(`[DEBUG] mainDish: ${mainDish}`);
 
   // 副菜の乱数を生成する
-  const sideDinnerNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
+  const sideDinnerNumber = Math.trunc(Math.random() * 100); // [0 - 99]までの値
   if (debugMode) {
-    console.log(`====================\n[DEBUG] sideDinnerNumber: ${sideDinnerNumber}`);
+    console.log(`[DEBUG] sideDinnerNumber: ${sideDinnerNumber}`);
   }
   // sideDish をセットする
-  let sideDish = data.sideDishes[sideDinnerNumber % NumberOfSideDishes];
+  let sideDish = data.sideDishes[sideDinnerNumber % numberOfSideDishes];
   if (debugMode) console.log(`[DEBUG] sideDish: ${sideDish}`);
 
   return [mainDish, sideDish];
@@ -85,8 +85,8 @@ function updateDinner() {
 
   const encodedMainDishName = encodeURIComponent(resultDinner[0][0]); // mainDish の料理名をエンコードする
   const nowOpen = encodeURIComponent(' 営業中'); // mapの絞り込み条件「 営業中」をエンコードする
-  firstMenuRecipeLink.setAttribute('href', recipeBaseURL + encodedMainDishName); // レシピを調べるリンクの href 属性の値を置き換える
-  firstMenuMapLink.setAttribute('href', mapBaseURL + encodedMainDishName + nowOpen); // 近くで食べられるところを探すリンクの href 属性の値を置き換える
+  firstMenuRecipeLink.href = recipeBaseURL + encodedMainDishName; // レシピを調べるリンクの href 属性の値を置き換える
+  firstMenuMapLink.href = mapBaseURL + encodedMainDishName + nowOpen; // 近くで食べられるところを探すリンクの href 属性の値を置き換える
 }
 
 
