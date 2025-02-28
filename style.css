@@ -12,36 +12,31 @@ ul {
   list-style-type: square;
 }
 
-.light {
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
-}
-
-
-/* Effect */
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: none;
-}
-
+a,
+a:hover,
 a:visited {
   text-decoration: none;
 }
 
-/* #main {
 
-} */
 /* main 領域に関するもの */
-
 #main.hide,
 #dinner.hide {
   display: none;
 }
 
+.light {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 1));
+}
 
 /* dinner 領域に関するもの */
+.fix-width {
+  max-width: 100%;
+  /* 画面幅に応じて最大サイズを調整 */
+  width: 350px;
+  /* デフォルトの幅 */
+  height: auto;
+}
 
 #dinner {
   border: thick double red;
@@ -64,22 +59,14 @@ a:visited {
   white-space: pre
 }
 
-/* .main-dish::after {
-  content: "✿";
-} */
-
 .side-dish::before {
   content: "✿副菜✿\A";
   font-size: 0.8em;
   white-space: pre
 }
 
-/* .side-dish::after {
-  content: "✿";
-} */
 
-
-/* footer に関するレイアウト */
+/* footer 領域に関するレイアウト */
 footer {
   margin: 2rem auto;
 }
@@ -106,19 +93,14 @@ footer.hide {
 #developers {
   outline: 0.2rem solid #fcb69f;
   background: #fff;
-  /* width: 90vmin; */
   padding: 1rem;
   border-radius: 8px;
   position: absolute;
-  /* top: 20vmax; */
-  /* left: 0; */
-  /* right: 0; */
-  /* margin: auto auto; */
   transition: transform 0.4s;
   z-index: 2;
 }
 
 #about.hide,
 #developers.hide {
-  transform: translate(0, -110vmax);
+  transform: translate(0, -150vmax);
 }

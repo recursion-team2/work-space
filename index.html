@@ -24,171 +24,131 @@
     <title>夜ごはん提案アプリ（仮）</title>
   </head>
   <body>
-    <div
-      id="container"
-      class="container min-vh-100 d-flex justify-content-center align-items-center"
-    >
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-8 col-10 my-4 text-center">
+    <div id="container" class="container">
+      <div class="row min-vh-100">
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+        >
           <div
-            id="main"
-            class="row justify-content-center align-items-center p-3"
+            id="target"
+            class="col-lg-4 col-md-6 col-sm-8 col-10 text-center"
           >
-            <h1 class="text-danger">夜ごはん提案アプリ（仮）</h1>
-            <div id="draw">
-              <p>
-                <img
-                  class="light mx-auto col-8"
-                  src="images/cooking_cloche_domecover_close.png"
-                />
-              </p>
-              <div class="mx-auto">
-                <button type="button" class="btn btn-danger btn-lg">
-                  夜ごはんを提案する
-                </button>
-              </div>
-            </div>
-          </div>
-          <div id="dinner" class="hide bg-white text-center text-danger p-3">
-            <h2>今日の夜ごはん</h2>
-            <hr />
-            <div id="first-suggestion">
-              <div>
-                <h3 id="first-menu" class="main-dish">選ばれた主菜</h3>
+            <div id="main" class="">
+              <h1 class="text-danger">夜ごはん提案アプリ（仮）</h1>
+              <div id="draw">
                 <p>
                   <img
-                    id="first-maindish-picture"
-                    class="col-8"
-                    src="images\food_curryruce.png"
+                    class="light mx-auto col-8"
+                    src="images/cooking_cloche_domecover_close.png"
                   />
                 </p>
+                <div class="mx-auto">
+                  <button type="button" class="btn btn-danger btn-lg">
+                    夜ごはんを提案する
+                  </button>
+                </div>
               </div>
-              <p id="first-description">ひとことコメント</p>
-              <ul
-                class="link-danger d-grid gap-2 d-flex justify-content-center"
-              >
-                <li id="first-recipe">
-                  <a
-                    href="#"
-                    target="_blank"
-                    id="first-menu-recipe-link"
-                    class="btn btn-outline-danger btn-sm"
-                    ><i class="bi bi-search"></i>レシピを調べる</a
-                  >
-                </li>
-                <li id="first-menu-map">
-                  <a
-                    href="#"
-                    target="_blank"
-                    id="first-menu-map-link"
-                    class="btn btn-outline-danger btn-sm"
-                    ><i class="bi bi-geo-alt-fill"></i>近くで食べられるところ</a
-                  >
-                </li>
-              </ul>
+            </div>
+            <div
+              id="dinner"
+              class="hide bg-white text-center text-danger p-3 my-3"
+            >
+              <h2>今日の夜ごはん</h2>
               <hr />
-              <div>
-                <h4 id="first-side-menu" class="side-dish">選ばれた副菜</h4>
-                <p>
-                  <img
-                    id="first-side-menu-picture"
-                    class="col-6"
-                    src="images\food_potato_sald.png"
-                  />
-                </p>
+              <div id="first-suggestion">
+                <div>
+                  <h3 id="first-menu" class="main-dish">選ばれた主菜</h3>
+                  <p>
+                    <img
+                      id="first-maindish-picture"
+                      class="col-7"
+                      src="images\food_curryruce.png"
+                    />
+                  </p>
+                </div>
+                <p id="first-description">ひとことコメント</p>
+                <ul
+                  class="link-danger d-grid gap-2 d-flex justify-content-center"
+                >
+                  <li id="first-recipe">
+                    <a
+                      href="#"
+                      target="_blank"
+                      id="first-menu-recipe-link"
+                      class="btn btn-outline-danger btn-sm"
+                      ><i class="bi bi-search"></i>レシピを調べる</a
+                    >
+                  </li>
+                  <li id="first-menu-map">
+                    <a
+                      href="#"
+                      target="_blank"
+                      id="first-menu-map-link"
+                      class="btn btn-outline-danger btn-sm"
+                      ><i class="bi bi-geo-alt-fill"></i
+                      >近くで食べられるところ</a
+                    >
+                  </li>
+                </ul>
+                <hr />
+                <div>
+                  <h4 id="first-side-menu" class="side-dish">選ばれた副菜</h4>
+                  <p>
+                    <img
+                      id="first-side-menu-picture"
+                      class="col-5"
+                      src="images\food_potato_sald.png"
+                    />
+                  </p>
+                </div>
+              </div>
+
+              <button type="button" id="retry" class="btn btn-danger mt-3">
+                もう一度、やってみる
+              </button>
+            </div>
+          </div>
+          <div id="about" class="hide col-lg-4 col-md-6 col-sm-8 col-10">
+            <h2>このおみくじについて</h2>
+            <p>
+              このアプリは、コンピュータ・サイエンスの学習プラットフォーム
+              Recursionで開催されているイベント「チーム開発体験会」の課題として制作されたものです。
+            </p>
+            <p>あなたの今日の晩ご飯を提案します。</p>
+            <p>
+              「チーム開発体験会」で脳を振り絞ったあなたにお勧めな晩ご飯を提案します。主菜と副菜、なんと主菜はクックパッドとGooglemapへのリンクもついています。ぜひ美味しく召し上がれ。
+            </p>
+          </div>
+          <div id="developers" class="hide col-lg-4 col-md-6 col-sm-8 col-10">
+            <h2>開発者一覧</h2>
+            <ul>
+              <li>
+                <a href="https://github.com/akemashita">akemashita</a
+                ><br />（たたき台の作成・レイアウトの調整）
+              </li>
+              <li>
+                <a href="https://github.com/chia3blue">chia3</a
+                ><br />（アプリのベース案作成・データベース作成）
+              </li>
+              <li>
+                <a href="https://github.com/tyz8250">tyz8250</a
+                ><br />（Javascriptによる仕組みの作成）
+              </li>
+            </ul>
+          </div>
+          <footer id="footer" class="">
+            <div class="">
+              <div class="d-flex justify-content-center">
+                <a href="#" id="show-about" class="link-danger"
+                  >このアプリについて</a
+                >｜
+                <a href="#" id="show-developers" class="link-danger">
+                  開発者一覧
+                </a>
               </div>
             </div>
-            <!-- いったん１種類の提案のみを表示するようにしました。
-            <hr />
-            <div id="second-suggestion">
-              <h3 id="second-menu" class="main-dish">２番目のメニュー</h3>
-              <p id="second-description">ひとこと</p>
-              <h3 id="second-side-menu" class="side-dish">２番目の副菜</h3>
-
-              <ul>
-                <li id="second-recipe">
-                  <a href="#" target="_blank" class="link-danger"
-                    >作り方を調べる</a
-                  >
-                </li>
-                <li id="second-find">
-                  <a href="#" target="_blank" class="link-danger"
-                    >食べられるところを探す</a
-                  >
-                </li>
-              </ul>
-            </div>
-            <hr />
-
-            <div id="third-suggestion">
-              <h3 id="third-menu" class="main-dish">３番目のメニュー</h3>
-
-              <p id="third-description">ひとこと</p>
-              <h3 id="third-side-menu" class="side-dish">３番目の副菜</h3>
-
-              <ul>
-                <li id="third-recipe">
-                  <a href="#" target="_blank" class="link-danger"
-                    >作り方を調べる</a
-                  >
-                </li>
-                <li id="third-find">
-                  <a href="#" target="_blank" class="link-danger"
-                    >食べられるところを探す</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-                        <div id="main-dish">主菜</div>
-                        <div id="side-dish">副菜</div>
-             -->
-
-            <button type="button" id="retry" class="btn btn-danger mt-3">
-              もう一度、やってみる
-            </button>
-          </div>
+          </footer>
         </div>
-        <div id="about" class="hide col-lg-3 col-md-4 col-sm-6 col-8">
-          <h2>このおみくじについて</h2>
-          <p>
-            このアプリは、コンピュータ・サイエンスの学習プラットフォーム
-            Recursionで開催されているイベント「チーム開発体験会」の課題として制作されたものです。
-          </p>
-          <p>あなたの今日の晩ご飯を提案します。</p>
-          <p>
-            「チーム開発体験会」で脳を振り絞ったあなたにお勧めな晩ご飯を提案します。主菜と副菜、なんと主菜はクックパッドとGooglemapへのリンクもついています。ぜひ美味しく召し上がれ。
-          </p>
-        </div>
-        <div id="developers" class="hide col-lg-3 col-md-4 col-sm-6 col-8">
-          <h2>開発者一覧</h2>
-          <ul>
-            <li>
-              <a href="https://github.com/akemashita">akemashita</a
-              ><br />（たたき台の作成・レイアウトの調整）
-            </li>
-            <li>
-              <a href="https://github.com/chia3blue">chia3</a
-              ><br />（アプリのベース案作成・データベース作成）
-            </li>
-            <li>
-              <a href="https://github.com/tyz8250">tyz8250</a
-              ><br />（Javascriptによる仕組みの作成）
-            </li>
-          </ul>
-        </div>
-        <footer id="footer" class="">
-          <div class="d-flex flex-column">
-            <div class="d-flex justify-content-center">
-              <a href="#" id="show-about" class="link-danger"
-                >このアプリについて</a
-              >｜
-              <a href="#" id="show-developers" class="link-danger">
-                開発者一覧
-              </a>
-            </div>
-          </div>
-        </footer>
       </div>
     </div>
     <div id="mask" class="hide"></div>
