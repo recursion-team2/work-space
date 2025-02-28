@@ -52,18 +52,23 @@ const targetArea = document.getElementById('target');
 // 晩ご飯をランダムで提案する
 function drawDinner() {
 
-  // 乱数を生成する
-  const dinnerNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
+  // 主菜の乱数を生成する
+  const mainDinnerNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
   if (debugMode) {
-    console.log(`====================\n[DEBUG] dinnerNumber: ${dinnerNumber}`);
+    console.log(`====================\n[DEBUG] mainDinnerNumber: ${mainDinnerNumber}`);
   }
 
   // mainDish をセットする
-  let mainDish = data.mainDishes[dinnerNumber % NumberOfMainDishes]; // dinnerNumber に応じて必ず mainDishes のいずれかを割り当てる
+  let mainDish = data.mainDishes[mainDinnerNumber % NumberOfMainDishes]; // mainDinnerNumber に応じて必ず mainDishes のいずれかを割り当てる
   if (debugMode) console.log(`[DEBUG] mainDish: ${mainDish}`);
 
+  // 副菜の乱数を生成する
+  const sideDinnerNumber = Math.trunc(Math.random() * 100 + 1); // [1 - 100]までの値
+  if (debugMode) {
+    console.log(`====================\n[DEBUG] sideDinnerNumber: ${sideDinnerNumber}`);
+  }
   // sideDish をセットする
-  let sideDish = data.sideDishes[dinnerNumber % NumberOfSideDishes];
+  let sideDish = data.sideDishes[sideDinnerNumber % NumberOfSideDishes];
   if (debugMode) console.log(`[DEBUG] sideDish: ${sideDish}`);
 
   return [mainDish, sideDish];

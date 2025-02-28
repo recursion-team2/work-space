@@ -1,6 +1,4 @@
 // メインディッシュ
-// luckyColors → mainDishesに変更
-// 9項目→10項目(鶏の山賊焼を追加)
 export const mainDishes = [
   ["カレーライス", "images/food_curryruce.png", "夕食どきの帰り道、どこからともなくスパイスのいい香りがした。そうだ今夜はカレーにしよう。"],
   ["オムライス", "images/food_omurice.png", "ケチャップで味付けされた、濃厚なご飯。ご飯を包む、ふわふわの卵。みんな大好きオムライスを食べよう。"],
@@ -11,11 +9,10 @@ export const mainDishes = [
   ["餃子", "images/food_gyouza_mise.png", "今夜の夕飯は餃子に決まり！パリッと焼けた皮を頬張れば、食欲をそそるニンニクの香りとジューシーな幸せが溢れ出す。"],
   ["うどん", "images/udon_tanuki.png", "コシのある麺に、香り高いお出汁が絶品。天ぷらや薬味を添えて、最高の一杯を味わおう。"],
   ["寿司", "images/nigirizushi_moriawase.png", "新鮮なネタがシャリと絶妙に絡み合い、口の中でとろける幸せ。今日はちょっと贅沢しちゃおう。"],
-  ["とんかつ", "images/food_tonkatsu.png", "揚げたてアツアツのとんかつを、お店ならではのサクサク衣とジューシーなお肉で楽しむ！ごはんと味噌汁と一緒に、大満足の一皿を召し上がれ。"],
+  ["とんかつ", "images/food_tonkatsu.png", "揚げたてアツアツのとんかつを、サクサク衣とジューシーなお肉で楽しむ！ごはんと味噌汁と一緒に、大満足の一皿を召し上がれ。"],
 ];
 
 // 副菜
-// luckyFoods →  sideDishesに変更
 export const sideDishes = [
   ["サラダ", "images/food_vegetable_sald.png"],
   ["冷奴", "images/food_hiyayakko.png"],
