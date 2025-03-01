@@ -10,7 +10,7 @@
 
 🍽 今日のごはんに迷ったら、ぜひ活用してみてください！
 
-## 👉 [**今すぐアプリを試す！**](https://recursion-team2.github.io/work-space/)
+## 👉 [**今すぐアプリを試す！**](https://recursion-team2.github.io/lottery-dinner/)
 
 ### 📸 スクリーンショット
 （後ほど追加予定）
