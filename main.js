@@ -94,9 +94,9 @@ function updateDinner() {
   const xButton = document.getElementById("x-share");
   xButton.addEventListener("click", function () {
     //ツイート文を作成
-    const xText = "私の今日の夜ごはんは" + resultDinner[0][0] + "と" + resultDinner[1][0] + "でした。あなたも夜ごはんを決めよう！";
+    const xText = "私の今日の夜ごはんは「" + resultDinner[0][0] + "」と「" + resultDinner[1][0] + "」でした。あなたも夜ごはんを決めよう！";
     // ハッシュタグを作成
-    const hashTag = "#くじ引き夜ごはん #今日のごはん #晩ごはん決定 #ごはんガチャ #運命のメニュー ";
+    const hashTag = "#くじ引き夜ごはん #今日のごはん #晩ごはん決定 #ごはんガチャ #運命のメニュー #RecursionCS ";
     //くじ引き夜ごはんへのリンクを作成
     const lotteryDinner = "https://recursion-team2.github.io/lottery-dinner/";
     // ツイート用リンクを作成

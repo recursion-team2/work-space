@@ -13,7 +13,7 @@
 ## 👉 [**今すぐアプリを試す！**](https://recursion-team2.github.io/lottery-dinner/)
 
 ### 📸 スクリーンショット
-（後ほど追加予定）
+![image1](image1.png) ![image2](image2.png)
 
 
 ## 👨‍💻 開発チーム
