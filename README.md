@@ -13,7 +13,7 @@
 ## 👉 [**今すぐアプリを試す！**](https://recursion-team2.github.io/lottery-dinner/)
 
 ### 📸 スクリーンショット
-（後ほど追加予定）
+<img src="image1.png" alt="初期画面" width="270" height="600">　<img src="image2.png" alt="メニュー決定後" width="270" height="600">
 
 
 ## 👨‍💻 開発チーム
