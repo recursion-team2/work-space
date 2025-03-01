@@ -48,7 +48,6 @@ const developersButton = document.getElementById('show-developers');
 const footerArea = document.getElementById('footer');
 
 const targetArea = document.getElementById('target');
-const snsShare = document.getElementById('x-share');
 
 // 晩ご飯をランダムで提案する
 function drawDinner() {
