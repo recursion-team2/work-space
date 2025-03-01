@@ -48,6 +48,7 @@ const developersButton = document.getElementById('show-developers');
 const footerArea = document.getElementById('footer');
 
 const targetArea = document.getElementById('target');
+const snsShare = document.getElementById('x-share');
 
 // 晩ご飯をランダムで提案する
 function drawDinner() {
@@ -74,6 +75,8 @@ function drawDinner() {
   return [mainDish, sideDish];
 }
 
+
+
 // 夜ご飯の提案結果を表示する
 function updateDinner() {
   const resultDinner = drawDinner(); // 提案する晩ご飯の結果（配列）を保存する変数
@@ -87,6 +90,17 @@ function updateDinner() {
   const nowOpen = encodeURIComponent(' 営業中'); // mapの絞り込み条件「 営業中」をエンコードする
   firstMenuRecipeLink.href = recipeBaseURL + encodedMainDishName; // レシピを調べるリンクの href 属性の値を置き換える
   firstMenuMapLink.href = mapBaseURL + encodedMainDishName + nowOpen; // 近くで食べられるところを探すリンクの href 属性の値を置き換える
+  
+  // シェア内容の設定を追加
+  if (snsShare) {
+    // シェアするテキストを設定
+    const shareText = encodeURIComponent(`今日の夜ごはんは「${resultDinner[0][0]}」と「${resultDinner[1][0]}」に決まりました！ #くじ引き夜ごはん`);
+    
+    // data-text属性を設定
+    snsShare.setAttribute('data-text', shareText);
+    
+  }
+  
 }
 
 
