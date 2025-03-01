@@ -108,3 +108,11 @@ footer.hide {
 #developers.hide {
   transform: translate(0, -150vmax);
 }
+
+.middle-font {
+  font-size: 0.8rem;
+}
+
+.small-font {
+  font-size: 0.7rem;
+}

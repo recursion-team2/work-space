@@ -38,9 +38,9 @@
                     src="images/cooking_cloche_domecover_close.png"
                   />
                 </p>
-                <div class="mx-auto">
-                  <button type="button" class="btn btn-danger btn-lg">
-                    夜ごはんを提案する
+                <div class="mx-auto pb-4">
+                  <button type="button" class="btn btn-danger btn-lg rounded-pill">
+                    今夜のごはんは？
                   </button>
                 </div>
               </div>
@@ -53,7 +53,7 @@
               <hr />
               <div id="first-suggestion">
                 <div>
-                  <h3 id="first-menu" class="main-dish">選ばれた主菜</h3>
+                  <h3 id="first-menu" class="main-dish mb-3">選ばれた主菜</h3>
                   <p>
                     <img
                       id="first-maindish-picture"
@@ -64,15 +64,15 @@
                 </div>
                 <p id="first-description">ひとことコメント</p>
                 <ul
-                  class="link-danger d-grid gap-2 d-flex justify-content-center"
+                  class="link-danger d-grid gap-2 d-flex justify-content-center mt-4"
                 >
                   <li id="first-recipe">
                     <a
                       href="#"
                       target="_blank"
                       id="first-menu-recipe-link"
-                      class="btn btn-outline-danger btn-sm"
-                      ><i class="bi bi-search"></i>レシピを調べる</a
+                      class="btn btn-outline-danger btn-sm rounded-pill"
+                      ><i class="bi bi-search me-1"></i>レシピを調べる</a
                     >
                   </li>
                   <li id="first-menu-map">
@@ -80,15 +80,15 @@
                       href="#"
                       target="_blank"
                       id="first-menu-map-link"
-                      class="btn btn-outline-danger btn-sm"
-                      ><i class="bi bi-geo-alt-fill"></i
+                      class="btn btn-outline-danger btn-sm rounded-pill"
+                      ><i class="bi bi-geo-alt-fill me-1"></i
                       >近くで食べられるところ</a
                     >
                   </li>
                 </ul>
                 <hr />
                 <div>
-                  <h4 id="first-side-menu" class="side-dish">選ばれた副菜</h4>
+                  <h4 id="first-side-menu" class="side-dish mb-3">選ばれた副菜</h4>
                   <p>
                     <img
                       id="first-side-menu-picture"
@@ -99,7 +99,7 @@
                 </div>
               </div>
 
-              <button type="button" id="retry" class="btn btn-danger mt-3">
+              <button type="button" id="retry" class="btn btn-danger mt-3 rounded-pill">
                 もう一度、やってみる
               </button>
             </div>
@@ -117,7 +117,7 @@
               <li>近くで食べられる場所のマップ表示📍</li>
             </ul>
             <p>
-              このアプリは、コンピュータ・サイエンスの学習プラットフォーム「Recursion」のイベント「チーム開発体験会」の課題として制作しました。
+              このアプリは、コンピュータ・サイエンスの学習プラットフォーム<a href="https://recursionist.io" target="blank">Recursion</a>のイベント「チーム開発体験会」の課題として制作しました。
               チーム開発を実践しながら、日々のちょっとした悩みを解決するツールを目指しています。
             </p>
             <p class="mb-0">
@@ -149,13 +149,16 @@
           <footer id="footer" class="">
             <div class="">
               <div class="d-flex justify-content-center">
-                <a href="#" id="show-about" class="link-danger"
+                <a href="#" id="show-about" class="link-danger middle-font"
                   >このアプリについて</a
-                >｜
-                <a href="#" id="show-developers" class="link-danger">
+                ><span class="text-danger middle-font">｜</span>
+                <a href="#" id="show-developers" class="link-danger middle-font">
                   開発者一覧
                 </a>
               </div>
+            </div>
+            <div class="text-center mt-3">
+              <p class="text-danger small-font">©くじ引き夜ごはん！</p>
             </div>
           </footer>
         </div>
