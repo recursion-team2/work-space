@@ -74,6 +74,8 @@ function drawDinner() {
   return [mainDish, sideDish];
 }
 
+
+
 // 夜ご飯の提案結果を表示する
 function updateDinner() {
   const resultDinner = drawDinner(); // 提案する晩ご飯の結果（配列）を保存する変数
@@ -87,8 +89,23 @@ function updateDinner() {
   const nowOpen = encodeURIComponent(' 営業中'); // mapの絞り込み条件「 営業中」をエンコードする
   firstMenuRecipeLink.href = recipeBaseURL + encodedMainDishName; // レシピを調べるリンクの href 属性の値を置き換える
   firstMenuMapLink.href = mapBaseURL + encodedMainDishName + nowOpen; // 近くで食べられるところを探すリンクの href 属性の値を置き換える
-}
 
+  //Xで共有ボタンを押したとき
+  const xButton = document.getElementById("x-share");
+  xButton.addEventListener("click", function () {
+    //ツイート文を作成
+    const xText = "私の今日の夜ごはんは" + resultDinner[0][0] + "と" + resultDinner[1][0] + "でした。あなたも夜ごはんを決めよう！";
+    // ハッシュタグを作成
+    const hashTag = "#くじ引き夜ごはん #今日のごはん #晩ごはん決定 #ごはんガチャ #運命のメニュー ";
+    //くじ引き夜ごはんへのリンクを作成
+    const lotteryDinner = "https://recursion-team2.github.io/lottery-dinner/";
+    // ツイート用リンクを作成
+    const tweetLink = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(xText + hashTag + lotteryDinner);
+    // ツイート用リンクを開く
+    window.open(tweetLink);
+  });
+
+}
 
 // 夜ごはんを提案するボタンを押したとき
 drawButton.addEventListener('click', () => {
